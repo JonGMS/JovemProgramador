@@ -9,22 +9,25 @@ class HelloWorld
 {
   static void Main()
   {
+
     List<Aluno> listaAluno = new List<Aluno>();
     string[] historicoCalculadora = new string[100];
     string[] usuario = { "ADMIN", "LUCAS", "MORTARI", "DUDA" };
     string[] senha = { "ADMIN", "123", "321", "AMOR DA MINHA VIDA" };
+
+    string[] numerosExtenso = { "ZERO", "UM", "DOIS", "TRÊS", "QUATRO", "CINCO", "SEIS", "SETE", "OITO", "NOVE", "DEZ" };
 
     Login(usuario, senha);
     int contador = 0;
     while (true)
     {
       int opcao = ApresentarMenuPrincipal();
-     
+
 
       if (opcao == 1)//Calculadora
       {
         string operador;
-        
+
         do
         {
           Console.Clear();
@@ -56,7 +59,7 @@ class HelloWorld
         string opcaoAluno = "";
         do
         {
-           opcaoAluno = ApresentarMenu("FORMULÁRIO");
+          opcaoAluno = ApresentarMenu("FORMULÁRIO");
           string nome = "";
 
           if (opcaoAluno == "1")
@@ -191,7 +194,22 @@ class HelloWorld
             ApresentarComDestaque("   ALUNO   | NOTA 1 | NOTA 2 | NOTA 3 | NOTA 4 | MÉDIA | STATUS\n", ConsoleColor.DarkGray);
             foreach (Aluno dadoAluno in listaAluno)
             {
-              string nomeLimitado = dadoAluno.Nome.Substring(0, 11);
+              string nomeLimitado = dadoAluno.Nome;
+              if (dadoAluno.Nome.Length > 11)
+              {
+                nomeLimitado = dadoAluno.Nome.Substring(0, 11);
+              }
+              else
+              {
+                int nmrCasas = 11 - dadoAluno.Nome.Length;
+                nomeLimitado = dadoAluno.Nome;
+                for (int i = 0; nmrCasas > i; i++)
+                {
+                  nomeLimitado = nomeLimitado + " ";
+                }
+              }
+
+
               decimal soma = dadoAluno.Prova1 + dadoAluno.Prova2 + dadoAluno.Prova3 + dadoAluno.Prova4;
               decimal media = soma / 4;
 
@@ -214,8 +232,46 @@ class HelloWorld
             ApresentarComDestaque("Nenhum aluno ou nota cadastrado!! Aperte [ENTER] para tentar novamente.", ConsoleColor.Red);
             Console.ReadLine();
           }
-          
+
         }
+      }
+      else if (opcao == 4)
+      {
+        Console.Clear();
+        int numero = 0;
+        do
+        {
+          try
+          {
+            Console.Write("Digite o número que você deseja: "); numero = Convert.ToInt16(Console.ReadLine());
+            if (numero > 10 || numero < 0)
+            {
+              ApresentarComDestaque("O número precisa ser de 0 à 10", ConsoleColor.Red);
+              continue;
+            }
+            for (int i = 0; i < 10; i++)
+            {
+              if (i == numero)
+              {
+                ApresentarComDestaque(numerosExtenso[i], ConsoleColor.Cyan);
+              }
+            }
+
+          }
+          catch (Exception e)
+          {
+            ApresentarComDestaque("O valor precisa ser um número de 0 à 10!! Aperte ENTER para tentar novamente ou digite [0] para sair.", ConsoleColor.Red);
+            numero = Convert.ToInt16(Console.ReadLine());
+            if(numero == 0)
+            {
+              numero = 11;
+            }
+
+          }
+
+        } while (numero <= 10 && numero >= 0);
+
+
       }
       else if (opcao == 0)
       {
@@ -266,9 +322,12 @@ class HelloWorld
       Console.Write("Escolha a simulação que deseja\nPara Calculadora 1.0 - "); ApresentarComDestaque("Digite [1]", ConsoleColor.DarkBlue);
       Console.Write("\nPara Cadastro de Aluno - "); ApresentarComDestaque("Digite [2]", ConsoleColor.DarkCyan);
       Console.Write("\nPara Notas para Alunos -"); ApresentarComDestaque("Digite [3]", ConsoleColor.Blue);
+      Console.Write("\nDigite [4] - "); ApresentarComDestaque("Número por extenso", ConsoleColor.DarkCyan);
       Console.Write("\nPara SAIR - "); ApresentarComDestaque("Digite [0]\n", ConsoleColor.Red);
+
+      
       string strOpcao = Console.ReadLine();
-      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3")
+      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4")
       {
         int opcao = Convert.ToInt16(strOpcao);
         return opcao;
