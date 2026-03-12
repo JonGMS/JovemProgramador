@@ -253,7 +253,8 @@ class HelloWorld
             {
               if (i == numero)
               {
-                ApresentarComDestaque(numerosExtenso[i], ConsoleColor.Cyan);
+                ApresentarComDestaque(numerosExtenso[i] + "\n", ConsoleColor.Cyan);
+
               }
             }
 
@@ -262,7 +263,7 @@ class HelloWorld
           {
             ApresentarComDestaque("O valor precisa ser um número de 0 à 10!! Aperte ENTER para tentar novamente ou digite [0] para sair.", ConsoleColor.Red);
             numero = Convert.ToInt16(Console.ReadLine());
-            if(numero == 0)
+            if (numero == 0)
             {
               numero = 11;
             }
@@ -270,6 +271,58 @@ class HelloWorld
           }
 
         } while (numero <= 10 && numero >= 0);
+
+      }
+      else if (opcao == 5)
+      {
+        string temperaturaStr = "";
+        do
+        {
+          try
+          {
+            Console.Write("Digite a temperatura desejada: ");  temperaturaStr = Console.ReadLine();
+            if(temperaturaStr == "SAIR")
+            {
+              continue;
+            }
+            int temperatura = Convert.ToInt16(temperaturaStr);
+            if(temperatura < 0)
+            {
+              ApresentarComDestaque("Temperatura Inválida! Tente novamente apertando [ENTER]",  ConsoleColor.Red);
+              Console.ReadLine();
+              continue;
+            }
+
+            for(int temperaturaForno = 0; temperaturaForno <= temperatura;)
+            {
+              if(temperaturaForno < 40 && temperaturaForno > 0)
+              {
+                temperaturaStr = Convert.ToString(temperaturaForno);
+                ApresentarComDestaque("\n"+temperaturaStr+"Cº", ConsoleColor.Yellow);
+              }
+              if(temperaturaForno >= 40 && temperaturaForno < 80 )
+              {
+                temperaturaStr = Convert.ToString(temperaturaForno);
+                ApresentarComDestaque("\n"+temperaturaStr+"Cº", ConsoleColor.DarkYellow);
+              }
+              if(temperaturaForno >= 80)
+              {
+                temperaturaStr = Convert.ToString(temperaturaForno);
+                ApresentarComDestaque("\n"+temperaturaStr+"Cº", ConsoleColor.Red);
+              }
+              temperaturaForno = temperaturaForno+20;
+              
+            }
+
+          }
+          catch
+          {
+            ApresentarComDestaque("Temperatura Inválida! Tente novamente apertando [ENTER] ou para sair digitando SAIR", ConsoleColor.Red);
+
+          }
+        }while(temperaturaStr != "SAIR");
+
+
 
 
       }
@@ -323,11 +376,12 @@ class HelloWorld
       Console.Write("\nPara Cadastro de Aluno - "); ApresentarComDestaque("Digite [2]", ConsoleColor.DarkCyan);
       Console.Write("\nPara Notas para Alunos -"); ApresentarComDestaque("Digite [3]", ConsoleColor.Blue);
       Console.Write("\nDigite [4] - "); ApresentarComDestaque("Número por extenso", ConsoleColor.DarkCyan);
+      Console.Write("\nDigite [5] -"); ApresentarComDestaque("Forno", ConsoleColor.Blue);
       Console.Write("\nPara SAIR - "); ApresentarComDestaque("Digite [0]\n", ConsoleColor.Red);
 
-      
+
       string strOpcao = Console.ReadLine();
-      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4")
+      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4"|| strOpcao == "5") 
       {
         int opcao = Convert.ToInt16(strOpcao);
         return opcao;
