@@ -372,15 +372,15 @@ class HelloWorld
     {
       Console.Clear();
 
-      Console.Write("Escolha a simulação que deseja\nPara Calculadora 1.0 - "); ApresentarComDestaque("Digite [1]", ConsoleColor.DarkBlue);
-      Console.Write("\nPara Cadastro de Aluno - "); ApresentarComDestaque("Digite [2]", ConsoleColor.DarkCyan);
-      Console.Write("\nPara Notas para Alunos -"); ApresentarComDestaque("Digite [3]", ConsoleColor.Blue);
-      Console.Write("\nDigite [4] - "); ApresentarComDestaque("Número por extenso", ConsoleColor.DarkCyan);
-      Console.Write("\nDigite [5] -"); ApresentarComDestaque("Forno", ConsoleColor.Blue);
-      Console.Write("\nPara SAIR - "); ApresentarComDestaque("Digite [0]\n", ConsoleColor.Red);
+      Console.Write("ESCOLHA A SIMULAÇÃO\n\nDigite [1] -"); ApresentarComDestaque(" Calculadora 1.0", ConsoleColor.DarkBlue);
+      Console.Write("\nDigite [2] -"); ApresentarComDestaque(" Cadastro de Aluno", ConsoleColor.DarkCyan);
+      Console.Write("\nDigite [3] -"); ApresentarComDestaque(" Notas para Alunos", ConsoleColor.Blue);
+      Console.Write("\nDigite [4] -"); ApresentarComDestaque(" Número por extenso", ConsoleColor.DarkCyan);
+      Console.Write("\nDigite [5] -"); ApresentarComDestaque(" Forno", ConsoleColor.Blue);
+      Console.Write("\nDigite [0] - "); ApresentarComDestaque("Para SAIR\n", ConsoleColor.Red);
 
 
-      string strOpcao = Console.ReadLine();
+      Console.Write("\nSIMULAÇÃO: "); string strOpcao = Console.ReadLine();
       if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4"|| strOpcao == "5") 
       {
         int opcao = Convert.ToInt16(strOpcao);
