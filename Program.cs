@@ -280,38 +280,38 @@ class HelloWorld
         {
           try
           {
-            Console.Write("Digite a temperatura desejada: ");  temperaturaStr = Console.ReadLine();
-            if(temperaturaStr == "SAIR")
+            Console.Write("Digite a temperatura desejada: "); temperaturaStr = Console.ReadLine();
+            if (temperaturaStr == "SAIR")
             {
               continue;
             }
             int temperatura = Convert.ToInt16(temperaturaStr);
-            if(temperatura < 0)
+            if (temperatura < 0)
             {
-              ApresentarComDestaque("Temperatura Inválida! Tente novamente apertando [ENTER]",  ConsoleColor.Red);
+              ApresentarComDestaque("Temperatura Inválida! Tente novamente apertando [ENTER]", ConsoleColor.Red);
               Console.ReadLine();
               continue;
             }
 
-            for(int temperaturaForno = 0; temperaturaForno <= temperatura;)
+            for (int temperaturaForno = 0; temperaturaForno <= temperatura;)
             {
-              if(temperaturaForno < 40 && temperaturaForno > 0)
+              if (temperaturaForno < 40 && temperaturaForno > 0)
               {
                 temperaturaStr = Convert.ToString(temperaturaForno);
-                ApresentarComDestaque("\n"+temperaturaStr+"Cº", ConsoleColor.Yellow);
+                ApresentarComDestaque("\n" + temperaturaStr + "Cº", ConsoleColor.Yellow);
               }
-              if(temperaturaForno >= 40 && temperaturaForno < 80 )
+              if (temperaturaForno >= 40 && temperaturaForno < 80)
               {
                 temperaturaStr = Convert.ToString(temperaturaForno);
-                ApresentarComDestaque("\n"+temperaturaStr+"Cº", ConsoleColor.DarkYellow);
+                ApresentarComDestaque("\n" + temperaturaStr + "Cº", ConsoleColor.DarkYellow);
               }
-              if(temperaturaForno >= 80)
+              if (temperaturaForno >= 80)
               {
                 temperaturaStr = Convert.ToString(temperaturaForno);
-                ApresentarComDestaque("\n"+temperaturaStr+"Cº", ConsoleColor.Red);
+                ApresentarComDestaque("\n" + temperaturaStr + "Cº", ConsoleColor.Red);
               }
-              temperaturaForno = temperaturaForno+20;
-              
+              temperaturaForno = temperaturaForno + 20;
+
             }
 
           }
@@ -320,11 +320,77 @@ class HelloWorld
             ApresentarComDestaque("Temperatura Inválida! Tente novamente apertando [ENTER] ou para sair digitando SAIR", ConsoleColor.Red);
 
           }
-        }while(temperaturaStr != "SAIR");
+        } while (temperaturaStr != "SAIR");
 
 
 
 
+      }
+      else if (opcao == 6)
+      {
+        string strOpcao = "";
+
+        do
+        {
+          try
+          {
+            string numeroTabuada = "";
+            ApresentarTitulo("TABUADA", ConsoleColor.DarkBlue);
+            
+            Console.Write("\nDigite [1] -"); ApresentarComDestaque(" Número especifico", ConsoleColor.DarkCyan);
+            Console.Write("\nDigite [2] -"); ApresentarComDestaque(" Tabuada até o 10\n\n", ConsoleColor.DarkCyan);
+            Console.Write("Opção: ");
+
+            strOpcao = Console.ReadLine();
+
+            if (strOpcao == "1")
+            {
+              do
+              {
+                try
+                {
+                  Console.Clear();
+                  ApresentarTitulo("TABUADA", ConsoleColor.DarkBlue);
+                  Console.Write("Digite o número da tabuada: ");
+                  int numero = Convert.ToInt16(Console.ReadLine());
+                  if (numero > 10 || numero < 0)
+                  {
+                    ApresentarComDestaque("Número inválido!! Tente Novamente apertando ENTER.", ConsoleColor.Red);
+                    Console.ReadLine();
+                    continue;
+                  }
+
+                  for (int i = 1; i <= 10; i++)
+                  {
+                    int resultado = numero * i;
+                    Console.Write(numero +" x " + i + " = " +  resultado + "\n");
+                  }
+                  Console.ReadLine();
+                }
+                catch
+                {
+                  ApresentarComDestaque("Número inválido!! Tente Novamente apertando ENTER ou digitando SAIR para Sair. ", ConsoleColor.Red);
+                  numeroTabuada = Console.ReadLine();
+                }
+              } while (numeroTabuada != "SAIR");
+            }
+            else if (strOpcao == "2")
+            {
+              for(int i = 0; i < 10; i++)
+              {
+                
+              }
+            }
+          }
+          catch (Exception e)
+          {
+            ApresentarComDestaque("Opção inválida!! Tente Novamente apertando ENTER ou digitando SAIR para Sair. ", ConsoleColor.Red);
+            strOpcao = Console.ReadLine();
+          }
+
+
+
+        } while (strOpcao != "SAIR");
       }
       else if (opcao == 0)
       {
@@ -341,8 +407,10 @@ class HelloWorld
       Console.Clear();
       Console.Write("Usuario: ");
       string usuarioStr = Console.ReadLine();
+      usuarioStr = usuarioStr.ToUpper();
       Console.Write("Senha: ");
       string senhaStr = Console.ReadLine();
+      senhaStr = senhaStr.ToUpper();
 
       for (int i = 0; i < usuario.Length; i++)
       {
@@ -377,11 +445,12 @@ class HelloWorld
       Console.Write("\nDigite [3] -"); ApresentarComDestaque(" Notas para Alunos", ConsoleColor.Blue);
       Console.Write("\nDigite [4] -"); ApresentarComDestaque(" Número por extenso", ConsoleColor.DarkCyan);
       Console.Write("\nDigite [5] -"); ApresentarComDestaque(" Forno", ConsoleColor.Blue);
+      Console.Write("\nDigite [6] -"); ApresentarComDestaque(" Tabuada", ConsoleColor.DarkCyan);
       Console.Write("\nDigite [0] - "); ApresentarComDestaque("Para SAIR\n", ConsoleColor.Red);
 
 
       Console.Write("\nSIMULAÇÃO: "); string strOpcao = Console.ReadLine();
-      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4"|| strOpcao == "5") 
+      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4" || strOpcao == "5" || strOpcao == "6")
       {
         int opcao = Convert.ToInt16(strOpcao);
         return opcao;
