@@ -396,6 +396,32 @@ class HelloWorld
       {
         break;
       }
+      else if (opcao == 7)
+      {
+        string strOpcao = "";
+        do
+        {
+          strOpcao = ApresentarMenu("JORNAL");
+          string descricao;
+          if(strOpcao == "1")
+          {
+            descricao = AlgodaoDoceMalHumor();
+            Console.WriteLine(descricao);
+          }
+          else if (strOpcao == "2")
+          {
+            descricao = CaesValeDescansoSandraAlmofada();
+            Console.WriteLine(descricao);
+          }
+          else
+          {
+            ApresentarComDestaque("Notícia Invalida, tente novamente apertando ETENR ou digitando [0] para SAIR", ConsoleColor.Red);
+            strOpcao = Console.ReadLine();
+          }
+          Console.ReadLine();
+        }while (strOpcao != "0");
+        
+      }
     }
 
   }
@@ -446,11 +472,12 @@ class HelloWorld
       Console.Write("\nDigite [4] -"); ApresentarComDestaque(" Número por extenso", ConsoleColor.DarkCyan);
       Console.Write("\nDigite [5] -"); ApresentarComDestaque(" Forno", ConsoleColor.Blue);
       Console.Write("\nDigite [6] -"); ApresentarComDestaque(" Tabuada", ConsoleColor.DarkCyan);
+      Console.Write("\nDigite [7] -"); ApresentarComDestaque(" Jornal", ConsoleColor.Blue);
       Console.Write("\nDigite [0] - "); ApresentarComDestaque("Para SAIR\n", ConsoleColor.Red);
 
 
       Console.Write("\nSIMULAÇÃO: "); string strOpcao = Console.ReadLine();
-      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4" || strOpcao == "5" || strOpcao == "6")
+      if (strOpcao == "0" || strOpcao == "1" || strOpcao == "2" || strOpcao == "3" || strOpcao == "4" || strOpcao == "5" || strOpcao == "6" || strOpcao == "7")
       {
         int opcao = Convert.ToInt16(strOpcao);
         return opcao;
@@ -506,6 +533,13 @@ class HelloWorld
       Console.Write("Digite "); ApresentarComDestaque("[1] para adicionar notas (Randomicas)\n", ConsoleColor.DarkBlue);
       Console.Write("Digite "); ApresentarComDestaque("[2] para Apresentar Boletim\n", ConsoleColor.Cyan);
       Console.Write("Digite "); ApresentarComDestaque("[0] para SAIR\n", ConsoleColor.Red);
+      string opcao = Console.ReadLine();
+      return opcao;
+    }
+    else if (tipo == "JORNAL")
+    {
+      Console.Write("Digite :"); ApresentarComDestaque("[1] para Algodão doce, motivo do seu estresse\n", ConsoleColor.DarkBlue);
+      Console.Write("Digite :"); ApresentarComDestaque("[2] para Cachorros melhorando o mercado na Vila\n", ConsoleColor.Cyan);
       string opcao = Console.ReadLine();
       return opcao;
     }
@@ -615,6 +649,18 @@ class HelloWorld
 
   }
 
+  public static string AlgodaoDoceMalHumor()
+  {
+    ApresentarComDestaque("Cientistas descobrem que nuvens de algodão-doce são, na verdade, filtros para o mau humor global", ConsoleColor.DarkMagenta);
+    
+    return "\nCIDADE DAS NUVENS – Um grupo de pesquisadores do Instituto de Fenômenos Inexplicáveis anunciou hoje uma descoberta que promete mudar a meteorologia: as nuvens que parecem algodão-doce ao pôr do sol não são feitas de vapor d'água, mas sim de uma substância altamente açucarada que absorve ondas de estresse da atmosfera. De acordo com o Dr. Cândido Açucarado, chefe da pesquisa, 'as nuvens funcionam como esponjas emocionais. Quando a humanidade está muito estressada, elas ficam mais rosadas e fofas para compensar o clima pesado na Terra.";
+  }
+  public static string CaesValeDescansoSandraAlmofada()
+  {
+    ApresentarComDestaque("Cães de estimação estão sendo contratados como consultores de sesta em multinacionais VALE DO DESCANSO", ConsoleColor.DarkMagenta);
+    
+    return "\nUma nova tendência está varrendo o mundo corporativo: a contratação de Golden Retrievers e Bulldogs como 'Chief Napping Officers' (Diretores de Soneca). Segundo o RH da Global Sleep Corp, a habilidade inata dos caninos de dormir em qualquer posição e lugar é a chave para aumentar a produtividade dos funcionários humanos. 'Percebemos que nossos funcionários estavam estressados. Trouxemos o 'Tobias', um Beagle especializado em roncos rítmicos, e o nível de relaxamento da equipe subiu 400%', afirmou a diretora de bem-estar, Sandra Almofada.";
+  }
 
 }
 class Aluno
