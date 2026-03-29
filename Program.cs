@@ -14,6 +14,8 @@ class HelloWorld
     string[] historicoCalculadora = new string[100];
     string[] usuario = { "ADMIN", "LUCAS", "MORTARI", "DUDA" };
     string[] senha = { "ADMIN", "123", "321", "AMOR DA MINHA VIDA" };
+    string [,] filmes = new string[4,100]; //4 dados armazenado, 100 filmes cadastrados
+    string [,]elenco = new string[9,100]; //id do filme + 8 pessoas do elenco , 100 filmes
 
     string[] numerosExtenso = { "ZERO", "UM", "DOIS", "TRÊS", "QUATRO", "CINCO", "SEIS", "SETE", "OITO", "NOVE", "DEZ" };
 
@@ -472,7 +474,7 @@ class HelloWorld
       Console.Write("\nDigite [4] -"); ApresentarComDestaque(" Número por extenso", ConsoleColor.DarkCyan);
       Console.Write("\nDigite [5] -"); ApresentarComDestaque(" Forno", ConsoleColor.Blue);
       Console.Write("\nDigite [6] -"); ApresentarComDestaque(" Tabuada", ConsoleColor.DarkCyan);
-      Console.Write("\nDigite [7] -"); ApresentarComDestaque(" Jornal", ConsoleColor.Blue);
+      Console.Write("\nDigite [7] -"); ApresentarComDestaque(" Netflix", ConsoleColor.Blue);
       Console.Write("\nDigite [0] - "); ApresentarComDestaque("Para SAIR\n", ConsoleColor.Red);
 
 
@@ -536,7 +538,7 @@ class HelloWorld
       string opcao = Console.ReadLine();
       return opcao;
     }
-    else if (tipo == "JORNAL")
+    else if (tipo == "NETFLIX")
     {
       Console.Write("Digite :"); ApresentarComDestaque("[1] para Algodão doce, motivo do seu estresse\n", ConsoleColor.DarkBlue);
       Console.Write("Digite :"); ApresentarComDestaque("[2] para Cachorros melhorando o mercado na Vila\n", ConsoleColor.Cyan);
