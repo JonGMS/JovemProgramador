@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Drawing;
 using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
-
+using System.Text.Json;
 class HelloWorld
 {
   static void Main()
@@ -14,8 +14,8 @@ class HelloWorld
     string[] historicoCalculadora = new string[100];
     string[] usuario = { "ADMIN", "LUCAS", "MORTARI", "DUDA" };
     string[] senha = { "ADMIN", "123", "321", "AMOR DA MINHA VIDA" };
-    string [,] filmes = new string[4,100]; //4 dados armazenado, 100 filmes cadastrados
-    string [,]elenco = new string[9,100]; //id do filme + 8 pessoas do elenco , 100 filmes
+    string[,] filmes = new string[4, 100]; //4 dados armazenado, 100 filmes cadastrados
+    string[,] elenco = new string[9, 100]; //id do filme + 8 pessoas do elenco , 100 filmes
 
     string[] numerosExtenso = { "ZERO", "UM", "DOIS", "TRÊS", "QUATRO", "CINCO", "SEIS", "SETE", "OITO", "NOVE", "DEZ" };
 
@@ -338,7 +338,7 @@ class HelloWorld
           {
             string numeroTabuada = "";
             ApresentarTitulo("TABUADA", ConsoleColor.DarkBlue);
-            
+
             Console.Write("\nDigite [1] -"); ApresentarComDestaque(" Número especifico", ConsoleColor.DarkCyan);
             Console.Write("\nDigite [2] -"); ApresentarComDestaque(" Tabuada até o 10\n\n", ConsoleColor.DarkCyan);
             Console.Write("Opção: ");
@@ -365,7 +365,7 @@ class HelloWorld
                   for (int i = 1; i <= 10; i++)
                   {
                     int resultado = numero * i;
-                    Console.Write(numero +" x " + i + " = " +  resultado + "\n");
+                    Console.Write(numero + " x " + i + " = " + resultado + "\n");
                   }
                   Console.ReadLine();
                 }
@@ -378,9 +378,9 @@ class HelloWorld
             }
             else if (strOpcao == "2")
             {
-              for(int i = 0; i < 10; i++)
+              for (int i = 0; i < 10; i++)
               {
-                
+
               }
             }
           }
@@ -403,26 +403,15 @@ class HelloWorld
         string strOpcao = "";
         do
         {
-          strOpcao = ApresentarMenu("JORNAL");
-          string descricao;
-          if(strOpcao == "1")
-          {
-            descricao = AlgodaoDoceMalHumor();
-            Console.WriteLine(descricao);
-          }
-          else if (strOpcao == "2")
-          {
-            descricao = CaesValeDescansoSandraAlmofada();
-            Console.WriteLine(descricao);
-          }
-          else
-          {
-            ApresentarComDestaque("Notícia Invalida, tente novamente apertando ETENR ou digitando [0] para SAIR", ConsoleColor.Red);
-            strOpcao = Console.ReadLine();
-          }
-          Console.ReadLine();
-        }while (strOpcao != "0");
-        
+
+
+          string json = File.ReadAllText("dados.json");
+
+          Filme filme = JsonSerializer.Deserialize<Filme>(json);
+
+          // Console.WriteLine(filme.Nome);
+        } while (strOpcao != "0");
+
       }
     }
 
@@ -654,13 +643,13 @@ class HelloWorld
   public static string AlgodaoDoceMalHumor()
   {
     ApresentarComDestaque("Cientistas descobrem que nuvens de algodão-doce são, na verdade, filtros para o mau humor global", ConsoleColor.DarkMagenta);
-    
+
     return "\nCIDADE DAS NUVENS – Um grupo de pesquisadores do Instituto de Fenômenos Inexplicáveis anunciou hoje uma descoberta que promete mudar a meteorologia: as nuvens que parecem algodão-doce ao pôr do sol não são feitas de vapor d'água, mas sim de uma substância altamente açucarada que absorve ondas de estresse da atmosfera. De acordo com o Dr. Cândido Açucarado, chefe da pesquisa, 'as nuvens funcionam como esponjas emocionais. Quando a humanidade está muito estressada, elas ficam mais rosadas e fofas para compensar o clima pesado na Terra.";
   }
   public static string CaesValeDescansoSandraAlmofada()
   {
     ApresentarComDestaque("Cães de estimação estão sendo contratados como consultores de sesta em multinacionais VALE DO DESCANSO", ConsoleColor.DarkMagenta);
-    
+
     return "\nUma nova tendência está varrendo o mundo corporativo: a contratação de Golden Retrievers e Bulldogs como 'Chief Napping Officers' (Diretores de Soneca). Segundo o RH da Global Sleep Corp, a habilidade inata dos caninos de dormir em qualquer posição e lugar é a chave para aumentar a produtividade dos funcionários humanos. 'Percebemos que nossos funcionários estavam estressados. Trouxemos o 'Tobias', um Beagle especializado em roncos rítmicos, e o nível de relaxamento da equipe subiu 400%', afirmou a diretora de bem-estar, Sandra Almofada.";
   }
 
@@ -702,6 +691,10 @@ class Aluno
   float[] lista_notas = new float[4];
 
 
+}
+class Filme
+{
+  
 }
 class Calculadora
 {
