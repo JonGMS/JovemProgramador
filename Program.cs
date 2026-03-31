@@ -14,8 +14,9 @@ class HelloWorld
     string[] historicoCalculadora = new string[100];
     string[] usuario = { "ADMIN", "LUCAS", "MORTARI", "DUDA" };
     string[] senha = { "ADMIN", "123", "321", "AMOR DA MINHA VIDA" };
-    string[,] filmes = new string[4, 100]; //4 dados armazenado, 100 filmes cadastrados
-    string[,] elenco = new string[9, 100]; //id do filme + 8 pessoas do elenco , 100 filmes
+    string[,] escolha = new string [2];
+    // string[,] filmes = new string[4, 100]; //4 dados armazenado, 100 filmes cadastrados
+    // string[,] elenco = new string[9, 100]; //id do filme + 8 pessoas do elenco , 100 filmes
 
     string[] numerosExtenso = { "ZERO", "UM", "DOIS", "TRÊS", "QUATRO", "CINCO", "SEIS", "SETE", "OITO", "NOVE", "DEZ" };
 
@@ -400,16 +401,33 @@ class HelloWorld
       }
       else if (opcao == 7)
       {
+        string caminho = "C:/Users/joaog/OneDrive/Área de Trabalho/PROJETOS/JovemProgramador/workplace/dados.json";
+
+        string json = File.ReadAllText(caminho);
+
+        List<Filme> filmes = JsonSerializer.Deserialize<List<Filme>>(json);
         string strOpcao = "";
         do
         {
+          Console.Clear();
+          ApresentarTitulo("NETFLIX", ConsoleColor.Red);
+          strOpcao = ApresentarMenu("NETFLIX");
+          Console.WriteLine(filmes[0].Nome);
+          if (strOpcao == "1") //listar todos os filmes 
+          {
+            string filme =ApresentarListaFilmes("TODOS", filmes, escolha);
 
+          }
+          else if (strOpcao == "2")//Listar por genero
+          {
 
-          string json = File.ReadAllText("dados.json");
+          }
+          else
+          {
+            ApresentarComDestaque("Opção inválida, tente novamente apertando ENTER ou [0] para sair.", ConsoleColor.Red);
+            strOpcao = Console.ReadLine();
+          }
 
-          Filme filme = JsonSerializer.Deserialize<Filme>(json);
-
-          // Console.WriteLine(filme.Nome);
         } while (strOpcao != "0");
 
       }
@@ -529,8 +547,10 @@ class HelloWorld
     }
     else if (tipo == "NETFLIX")
     {
-      Console.Write("Digite :"); ApresentarComDestaque("[1] para Algodão doce, motivo do seu estresse\n", ConsoleColor.DarkBlue);
-      Console.Write("Digite :"); ApresentarComDestaque("[2] para Cachorros melhorando o mercado na Vila\n", ConsoleColor.Cyan);
+      Console.Write("Digite :"); ApresentarComDestaque("[1] para Listar todos os filmes\n", ConsoleColor.White);
+      Console.Write("Digite :"); ApresentarComDestaque("[2] para Listar por Genero\n", ConsoleColor.White);
+      Console.Write("Digite :"); ApresentarComDestaque("[3] para separar Serie/Filme\n", ConsoleColor.White);
+      Console.Write("Digite "); ApresentarComDestaque("[0] para SAIR\n", ConsoleColor.Red);
       string opcao = Console.ReadLine();
       return opcao;
     }
@@ -640,19 +660,112 @@ class HelloWorld
 
   }
 
-  public static string AlgodaoDoceMalHumor()
+  public static string ApresentarListaFilmes(string tipo, List<Filme> filmes, string[] escolha)
   {
-    ApresentarComDestaque("Cientistas descobrem que nuvens de algodão-doce são, na verdade, filtros para o mau humor global", ConsoleColor.DarkMagenta);
+    if (tipo == "TODOS")
+    {
+      int card1 = 1, card2 = 2, card3 = 3, card4 = 4, card5 = 5;
+      for (int i = 0; i < filmes.Count(); i++)
+      {
+        Console.WriteLine("_________________________________________________________________________________________________________________________________________________________________________");
 
-    return "\nCIDADE DAS NUVENS – Um grupo de pesquisadores do Instituto de Fenômenos Inexplicáveis anunciou hoje uma descoberta que promete mudar a meteorologia: as nuvens que parecem algodão-doce ao pôr do sol não são feitas de vapor d'água, mas sim de uma substância altamente açucarada que absorve ondas de estresse da atmosfera. De acordo com o Dr. Cândido Açucarado, chefe da pesquisa, 'as nuvens funcionam como esponjas emocionais. Quando a humanidade está muito estressada, elas ficam mais rosadas e fofas para compensar o clima pesado na Terra.";
+        string strcard1 = Convert.ToString(card1);
+        string strcard2 = Convert.ToString(card2);
+        string strcard3 = Convert.ToString(card3);
+        string strcard4 = Convert.ToString(card4);
+        string strcard5 = Convert.ToString(card5);
+
+        Console.WriteLine("\n");
+
+        // ===== FUNÇÃO LOCAL PARA AJUSTAR TEXTO =====
+        string AjustarTexto(string texto)
+        {
+          int tamanhoFinal = 24;
+
+          if (string.IsNullOrEmpty(texto))
+            texto = "";
+
+          // Corta se for maior que 28
+          if (texto.Length > 28)
+            texto = texto.Substring(0, 32);
+
+          // Adiciona espaços manualmente
+          int faltam = tamanhoFinal - texto.Length;
+
+          for (int i = 0; i < faltam; i++)
+          {
+            texto += " ";
+          }
+
+          return texto;
+        }
+
+        // ===== NOMES =====
+        string nome1 = AjustarTexto(filmes[card1].Nome);
+        string nome2 = AjustarTexto(filmes[card2].Nome);
+        string nome3 = AjustarTexto(filmes[card3].Nome);
+        string nome4 = AjustarTexto(filmes[card4].Nome);
+        string nome5 = AjustarTexto(filmes[card5].Nome);
+
+        // ===== LINHA DOS CARDS =====
+        Console.Write("   [");
+        ApresentarComDestaque(strcard1, ConsoleColor.Red);
+        Console.Write("] " + nome1 + " | ");
+
+        Console.Write("   [");
+        ApresentarComDestaque(strcard2, ConsoleColor.Red);
+        Console.Write("] " + nome2 + " | ");
+
+        Console.Write("   [");
+        ApresentarComDestaque(strcard3, ConsoleColor.Red);
+        Console.Write("] " + nome3 + " | ");
+
+        Console.Write("   [");
+        ApresentarComDestaque(strcard4, ConsoleColor.Red);
+        Console.Write("] " + nome4 + " | ");
+
+        Console.Write("   [");
+        ApresentarComDestaque(strcard5, ConsoleColor.Red);
+        Console.Write("] " + nome5 + "\n");
+
+        // ===== SINOPSES =====
+        string sinopse1 = AjustarTexto(filmes[card1].Sinopse);
+        string sinopse2 = AjustarTexto(filmes[card2].Sinopse);
+        string sinopse3 = AjustarTexto(filmes[card3].Sinopse);
+        string sinopse4 = AjustarTexto(filmes[card4].Sinopse);
+        string sinopse5 = AjustarTexto(filmes[card5].Sinopse);
+
+        ApresentarComDestaque(sinopse1, ConsoleColor.DarkGray);
+        Console.Write(" | ");
+
+        ApresentarComDestaque(sinopse2, ConsoleColor.DarkGray);
+        Console.Write(" | ");
+
+        ApresentarComDestaque(sinopse3, ConsoleColor.DarkGray);
+        Console.Write(" | ");
+
+        ApresentarComDestaque(sinopse4, ConsoleColor.DarkGray);
+        Console.Write(" | ");
+
+        ApresentarComDestaque(sinopse5, ConsoleColor.DarkGray);
+        Console.Write("\n");
+
+        Console.WriteLine("\n");
+        i = i + 5;
+        card1 = card1 + 5;
+        card2 = card2 + 5;
+        card3 = card3 + 5;
+        card4 = card4 + 5;
+        card5 = card5 + 5;
+
+      }
+
+      string filme = Console.ReadLine();
+      escolha[0] = filmes[filme].Genero;
+      return filme;
+    }
+    return " ";
   }
-  public static string CaesValeDescansoSandraAlmofada()
-  {
-    ApresentarComDestaque("Cães de estimação estão sendo contratados como consultores de sesta em multinacionais VALE DO DESCANSO", ConsoleColor.DarkMagenta);
-
-    return "\nUma nova tendência está varrendo o mundo corporativo: a contratação de Golden Retrievers e Bulldogs como 'Chief Napping Officers' (Diretores de Soneca). Segundo o RH da Global Sleep Corp, a habilidade inata dos caninos de dormir em qualquer posição e lugar é a chave para aumentar a produtividade dos funcionários humanos. 'Percebemos que nossos funcionários estavam estressados. Trouxemos o 'Tobias', um Beagle especializado em roncos rítmicos, e o nível de relaxamento da equipe subiu 400%', afirmou a diretora de bem-estar, Sandra Almofada.";
-  }
-
 }
 class Aluno
 {
@@ -694,7 +807,29 @@ class Aluno
 }
 class Filme
 {
-  
+  public string Nome { get; set; }
+  public string Sinopse { get; set; }
+  public string Genero { get; set; }
+  public string Tipo { get; set; }
+  public int Avaliacao { get; set; }
+
+  public List<Elenco> Elenco { get; set; }
+  public Filme() { }
+
+  public Filme(string nome, string sinopse, string genero, string tipo, int avaliacao)
+  {
+    Nome = nome;
+    Sinopse = sinopse;
+    Genero = genero;
+    Tipo = tipo;
+    Avaliacao = avaliacao;
+
+  }
+}
+class Elenco
+{
+  public int ID { get; set; }
+  public string nome { get; set; }
 }
 class Calculadora
 {
