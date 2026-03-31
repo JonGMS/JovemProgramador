@@ -1,0 +1,364 @@
+[
+  {
+    "Nome": "O Último Horizonte",
+    "Sinopse": "Um explorador enfrenta um planeta desconhecido em busca de um novo lar.",
+    "Genero": "Ficção Científica",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 1, "nome": "Lucas Andrade" },
+      { "ID": 2, "nome": "Marina Souza" },
+      { "ID": 3, "nome": "Carlos Mendes" }
+    ]
+  },
+  {
+    "Nome": "Sombras do Passado",
+    "Sinopse": "Uma detetive investiga crimes ligados ao seu passado.",
+    "Genero": "Suspense",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 4, "nome": "Fernanda Lima" },
+      { "ID": 5, "nome": "Rafael Costa" },
+      { "ID": 6, "nome": "Juliana Alves" }
+    ]
+  },
+  {
+    "Nome": "Amor em Paris",
+    "Sinopse": "Dois desconhecidos se encontram e vivem um romance inesperado.",
+    "Genero": "Romance",
+    "Tipo": "Filme",
+    "Avaliacao": 7,
+    "Elenco": [
+      { "ID": 7, "nome": "Ana Clara" },
+      { "ID": 8, "nome": "Pedro Rocha" },
+      { "ID": 9, "nome": "Bianca Torres" }
+    ]
+  },
+  {
+    "Nome": "A Última Batalha",
+    "Sinopse": "Guerreiros enfrentam um império tirano.",
+    "Genero": "Ação",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 10, "nome": "Bruno Silva" },
+      { "ID": 11, "nome": "Diego Martins" },
+      { "ID": 12, "nome": "Renata Nunes" }
+    ]
+  },
+  {
+    "Nome": "Mistério na Floresta",
+    "Sinopse": "Um grupo desaparece em uma floresta cheia de segredos.",
+    "Genero": "Terror",
+    "Tipo": "Filme",
+    "Avaliacao": 6,
+    "Elenco": [
+      { "ID": 13, "nome": "Paulo Ricardo" },
+      { "ID": 14, "nome": "Camila Duarte" },
+      { "ID": 15, "nome": "Igor Freitas" }
+    ]
+  },
+  {
+    "Nome": "Cidade Perdida",
+    "Sinopse": "Exploradores encontram uma civilização esquecida.",
+    "Genero": "Aventura",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 16, "nome": "Ricardo Teixeira" },
+      { "ID": 17, "nome": "Amanda Lopes" },
+      { "ID": 18, "nome": "Felipe Gomes" }
+    ]
+  },
+  {
+    "Nome": "Código Zero",
+    "Sinopse": "Hackers lutam contra um sistema corrupto.",
+    "Genero": "Ação",
+    "Tipo": "Filme",
+    "Avaliacao": 7,
+    "Elenco": [
+      { "ID": 19, "nome": "Leonardo Barros" },
+      { "ID": 20, "nome": "Tatiane Melo" },
+      { "ID": 21, "nome": "Victor Hugo" }
+    ]
+  },
+  {
+    "Nome": "Além do Tempo",
+    "Sinopse": "Um homem viaja no tempo para salvar sua família.",
+    "Genero": "Ficção Científica",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 22, "nome": "Eduardo Pires" },
+      { "ID": 23, "nome": "Larissa Castro" },
+      { "ID": 24, "nome": "João Pedro" }
+    ]
+  },
+  {
+    "Nome": "No Limite",
+    "Sinopse": "Atletas enfrentam desafios extremos.",
+    "Genero": "Drama",
+    "Tipo": "Filme",
+    "Avaliacao": 7,
+    "Elenco": [
+      { "ID": 25, "nome": "Gustavo Lima" },
+      { "ID": 26, "nome": "Carolina Farias" },
+      { "ID": 27, "nome": "Matheus Souza" }
+    ]
+  },
+  {
+    "Nome": "Segredos do Mar",
+    "Sinopse": "Uma equipe descobre mistérios nas profundezas.",
+    "Genero": "Aventura",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 28, "nome": "Roberto Dias" },
+      { "ID": 29, "nome": "Patricia Gomes" },
+      { "ID": 30, "nome": "André Luiz" }
+    ]
+  },
+  {
+    "Nome": "Operação Final",
+    "Sinopse": "Agentes secretos evitam uma catástrofe global.",
+    "Genero": "Ação",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 31, "nome": "Marcelo Alves" },
+      { "ID": 32, "nome": "Vanessa Ribeiro" },
+      { "ID": 33, "nome": "Thiago Santos" }
+    ]
+  },
+  {
+    "Nome": "A Casa Abandonada",
+    "Sinopse": "Uma família enfrenta eventos sobrenaturais.",
+    "Genero": "Terror",
+    "Tipo": "Filme",
+    "Avaliacao": 6,
+    "Elenco": [
+      { "ID": 34, "nome": "Daniel Rocha" },
+      { "ID": 35, "nome": "Isabela Moraes" },
+      { "ID": 36, "nome": "Rogério Pinto" }
+    ]
+  },
+  {
+    "Nome": "Destino Cruzado",
+    "Sinopse": "Histórias de pessoas que se conectam inesperadamente.",
+    "Genero": "Drama",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 37, "nome": "Helena Cardoso" },
+      { "ID": 38, "nome": "Fábio Pereira" },
+      { "ID": 39, "nome": "Julio Cesar" }
+    ]
+  },
+  {
+    "Nome": "Corrida Mortal",
+    "Sinopse": "Pilotos competem em corridas ilegais.",
+    "Genero": "Ação",
+    "Tipo": "Filme",
+    "Avaliacao": 7,
+    "Elenco": [
+      { "ID": 40, "nome": "Alexandre Braga" },
+      { "ID": 41, "nome": "Beatriz Campos" },
+      { "ID": 42, "nome": "Renan Duarte" }
+    ]
+  },
+  {
+    "Nome": "Lendas Antigas",
+    "Sinopse": "Heróis enfrentam criaturas míticas.",
+    "Genero": "Fantasia",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 43, "nome": "Vinicius Tavares" },
+      { "ID": 44, "nome": "Aline Batista" },
+      { "ID": 45, "nome": "Sérgio Oliveira" }
+    ]
+  },
+  
+  {
+    "Nome": "Ecos do Futuro",
+    "Sinopse": "Mensagens misteriosas começam a chegar do futuro.",
+    "Genero": "Ficção Científica",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 46, "nome": "Renato Azevedo" },
+      { "ID": 47, "nome": "Clara Martins" },
+      { "ID": 48, "nome": "Hugo Carvalho" }
+    ]
+  },
+  {
+    "Nome": "Noite Sem Fim",
+    "Sinopse": "Uma cidade mergulha em caos durante uma noite interminável.",
+    "Genero": "Suspense",
+    "Tipo": "Filme",
+    "Avaliacao": 7,
+    "Elenco": [
+      { "ID": 49, "nome": "Patrícia Neves" },
+      { "ID": 50, "nome": "Anderson Lima" },
+      { "ID": 51, "nome": "Bruna Sales" }
+    ]
+  },
+  {
+    "Nome": "Entre Dois Mundos",
+    "Sinopse": "Uma jovem descobre a existência de dimensões paralelas.",
+    "Genero": "Fantasia",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 52, "nome": "Juliana Prado" },
+      { "ID": 53, "nome": "Caio Fernandes" },
+      { "ID": 54, "nome": "Marcos Vinicius" }
+    ]
+  },
+  {
+    "Nome": "Plano Perfeito",
+    "Sinopse": "Um grupo elabora o assalto mais ousado da história.",
+    "Genero": "Ação",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 55, "nome": "Felipe Andrade" },
+      { "ID": 56, "nome": "Larissa Teixeira" },
+      { "ID": 57, "nome": "Douglas Ramos" }
+    ]
+  },
+  {
+    "Nome": "Vozes do Além",
+    "Sinopse": "Um radialista começa a receber mensagens de espíritos.",
+    "Genero": "Terror",
+    "Tipo": "Filme",
+    "Avaliacao": 6,
+    "Elenco": [
+      { "ID": 58, "nome": "Ricardo Moura" },
+      { "ID": 59, "nome": "Simone Pacheco" },
+      { "ID": 60, "nome": "Leandro Lopes" }
+    ]
+  },
+  {
+    "Nome": "Caminho da Glória",
+    "Sinopse": "Um atleta supera desafios para alcançar o topo.",
+    "Genero": "Drama",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 61, "nome": "Guilherme Torres" },
+      { "ID": 62, "nome": "Vanessa Freire" },
+      { "ID": 63, "nome": "Rodrigo Bastos" }
+    ]
+  },
+  {
+    "Nome": "Segunda Chance",
+    "Sinopse": "Dois ex-amantes se reencontram após anos.",
+    "Genero": "Romance",
+    "Tipo": "Filme",
+    "Avaliacao": 7,
+    "Elenco": [
+      { "ID": 64, "nome": "Tatiane Rocha" },
+      { "ID": 65, "nome": "Bruno Farias" },
+      { "ID": 66, "nome": "Elaine Duarte" }
+    ]
+  },
+  {
+    "Nome": "Zona de Perigo",
+    "Sinopse": "Soldados enfrentam uma missão suicida.",
+    "Genero": "Ação",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 67, "nome": "Marcelo Nogueira" },
+      { "ID": 68, "nome": "Igor Batista" },
+      { "ID": 69, "nome": "Paula Rezende" }
+    ]
+  },
+  {
+    "Nome": "Ilha Misteriosa",
+    "Sinopse": "Sobreviventes descobrem segredos em uma ilha isolada.",
+    "Genero": "Aventura",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 70, "nome": "Fernando Melo" },
+      { "ID": 71, "nome": "Camila Rocha" },
+      { "ID": 72, "nome": "Sandro Vieira" }
+    ]
+  },
+  {
+    "Nome": "Correntes do Destino",
+    "Sinopse": "Vidas interligadas por escolhas do passado.",
+    "Genero": "Drama",
+    "Tipo": "Filme",
+    "Avaliacao": 7,
+    "Elenco": [
+      { "ID": 73, "nome": "Luciana Campos" },
+      { "ID": 74, "nome": "Renato Dias" },
+      { "ID": 75, "nome": "Eduarda Alves" }
+    ]
+  },
+  {
+    "Nome": "Caçada Urbana",
+    "Sinopse": "Um fugitivo tenta escapar de uma perseguição intensa.",
+    "Genero": "Suspense",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 76, "nome": "Alex Sandro" },
+      { "ID": 77, "nome": "Beatriz Nogueira" },
+      { "ID": 78, "nome": "Rafael Teixeira" }
+    ]
+  },
+  {
+    "Nome": "O Ritual",
+    "Sinopse": "Um grupo invoca forças que não consegue controlar.",
+    "Genero": "Terror",
+    "Tipo": "Filme",
+    "Avaliacao": 6,
+    "Elenco": [
+      { "ID": 79, "nome": "João Vitor" },
+      { "ID": 80, "nome": "Carla Mendes" },
+      { "ID": 81, "nome": "Diego Pacheco" }
+    ]
+  },
+  {
+    "Nome": "Horizonte Vermelho",
+    "Sinopse": "Colonizadores lutam para sobreviver em Marte.",
+    "Genero": "Ficção Científica",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 82, "nome": "Leonardo Duarte" },
+      { "ID": 83, "nome": "Marina Freitas" },
+      { "ID": 84, "nome": "Otavio Ribeiro" }
+    ]
+  },
+  {
+    "Nome": "Roubo Impossível",
+    "Sinopse": "Um ladrão planeja o roubo mais difícil da história.",
+    "Genero": "Ação",
+    "Tipo": "Filme",
+    "Avaliacao": 8,
+    "Elenco": [
+      { "ID": 85, "nome": "Carlos Eduardo" },
+      { "ID": 86, "nome": "Patricia Alves" },
+      { "ID": 87, "nome": "Fabrício Gomes" }
+    ]
+  },
+  {
+    "Nome": "Magia Proibida",
+    "Sinopse": "Uma aprendiz descobre feitiços esquecidos.",
+    "Genero": "Fantasia",
+    "Tipo": "Filme",
+    "Avaliacao": 9,
+    "Elenco": [
+      { "ID": 88, "nome": "Ariana Souza" },
+      { "ID": 89, "nome": "Victor Fernandes" },
+      { "ID": 90, "nome": "Samuel Oliveira" }
+    ]
+  }
+
+]

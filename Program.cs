@@ -14,7 +14,7 @@ class HelloWorld
     string[] historicoCalculadora = new string[100];
     string[] usuario = { "ADMIN", "LUCAS", "MORTARI", "DUDA" };
     string[] senha = { "ADMIN", "123", "321", "AMOR DA MINHA VIDA" };
-    string[,] escolha = new string [2];
+    string[] escolha = new string[2];
     // string[,] filmes = new string[4, 100]; //4 dados armazenado, 100 filmes cadastrados
     // string[,] elenco = new string[9, 100]; //id do filme + 8 pessoas do elenco , 100 filmes
 
@@ -415,7 +415,32 @@ class HelloWorld
           Console.WriteLine(filmes[0].Nome);
           if (strOpcao == "1") //listar todos os filmes 
           {
-            string filme =ApresentarListaFilmes("TODOS", filmes, escolha);
+            string sujestao = "";
+            do
+            {
+              int id_filme = ApresentarListaFilmes("TODOS", filmes, escolha);
+
+              try
+              {
+                Console.WriteLine(filmes[id_filme].Nome);
+                Console.WriteLine(filmes[id_filme].Sinopse);
+                for (int i = 0; i < filmes[id_filme].Avaliacao; i++)
+                {
+                  Console.Write("* ");
+                }
+                Console.WriteLine(" " + filmes[id_filme].Avaliacao+ ",0");
+                ApresentarListaFilmes("SUJESTÃO", filmes, escolha);
+
+                Console.ReadLine();
+
+              }
+              catch (Exception e)
+              {
+
+              }
+            } while (sujestao != "0");
+
+
 
           }
           else if (strOpcao == "2")//Listar por genero
@@ -660,7 +685,7 @@ class HelloWorld
 
   }
 
-  public static string ApresentarListaFilmes(string tipo, List<Filme> filmes, string[] escolha)
+  public static int ApresentarListaFilmes(string tipo, List<Filme> filmes, string[] escolha)
   {
     if (tipo == "TODOS")
     {
@@ -674,10 +699,8 @@ class HelloWorld
         string strcard3 = Convert.ToString(card3);
         string strcard4 = Convert.ToString(card4);
         string strcard5 = Convert.ToString(card5);
-
         Console.WriteLine("\n");
 
-        // ===== FUNÇÃO LOCAL PARA AJUSTAR TEXTO =====
         string AjustarTexto(string texto)
         {
           int tamanhoFinal = 24;
@@ -700,14 +723,12 @@ class HelloWorld
           return texto;
         }
 
-        // ===== NOMES =====
         string nome1 = AjustarTexto(filmes[card1].Nome);
         string nome2 = AjustarTexto(filmes[card2].Nome);
         string nome3 = AjustarTexto(filmes[card3].Nome);
         string nome4 = AjustarTexto(filmes[card4].Nome);
         string nome5 = AjustarTexto(filmes[card5].Nome);
 
-        // ===== LINHA DOS CARDS =====
         Console.Write("   [");
         ApresentarComDestaque(strcard1, ConsoleColor.Red);
         Console.Write("] " + nome1 + " | ");
@@ -728,7 +749,6 @@ class HelloWorld
         ApresentarComDestaque(strcard5, ConsoleColor.Red);
         Console.Write("] " + nome5 + "\n");
 
-        // ===== SINOPSES =====
         string sinopse1 = AjustarTexto(filmes[card1].Sinopse);
         string sinopse2 = AjustarTexto(filmes[card2].Sinopse);
         string sinopse3 = AjustarTexto(filmes[card3].Sinopse);
@@ -759,12 +779,103 @@ class HelloWorld
         card5 = card5 + 5;
 
       }
+      do
+      {
+        try
+        {
+          int filme = Convert.ToInt16(Console.ReadLine());
+          escolha[0] = filmes[filme].Genero;
+          return filme;
+        }
+        catch (Exception e)
+        {
+            ApresentarComDestaque("ERRO - Opção inválida, tente novamente apertando ENTER.", ConsoleColor.Red);
+            Console.ReadLine();
+        }
+      }while(true);
 
-      string filme = Console.ReadLine();
-      escolha[0] = filmes[filme].Genero;
-      return filme;
+
+
     }
-    return " ";
+    else if (tipo == "SUJESTÃO")
+{
+    // ===== FUNÇÃO =====
+    string AjustarTexto(string texto)
+    {
+        int tamanhoFinal = 24;
+
+        if (string.IsNullOrEmpty(texto))
+            texto = "";
+
+        if (texto.Length > 28)
+            texto = texto.Substring(0, 20);
+
+        int faltam = tamanhoFinal - texto.Length;
+
+        if (faltam > 0)
+        {
+            for (int i = 0; i < faltam; i++)
+            {
+                texto += " ";
+            }
+        }
+
+        return texto;
+    }
+
+    string generoEscolhido = escolha[0];
+
+    List<Filme> filtrados = filmes
+        .Where(f => f.Genero.Equals(generoEscolhido, StringComparison.OrdinalIgnoreCase))
+        .Take(3)
+        .ToList();
+
+
+    if (filtrados.Count < 3)
+    {
+        Console.WriteLine("Não há filmes suficientes desse gênero.");
+        return 0;
+    }
+
+
+    var filme1 = filtrados[0];
+    var filme2 = filtrados[1];
+    var filme3 = filtrados[2];
+
+    string strcard1 = "1";
+    string strcard2 = "2";
+    string strcard3 = "3";
+
+    string nome1 = AjustarTexto(filme1.Nome);
+    string nome2 = AjustarTexto(filme2.Nome);
+    string nome3 = AjustarTexto(filme3.Nome);
+
+    Console.Write("   [");
+    ApresentarComDestaque(strcard1, ConsoleColor.Red);
+    Console.Write("] " + nome1 + " | ");
+
+    Console.Write("   [");
+    ApresentarComDestaque(strcard2, ConsoleColor.Red);
+    Console.Write("] " + nome2 + " | ");
+
+    Console.Write("   [");
+    ApresentarComDestaque(strcard3, ConsoleColor.Red);
+    Console.Write("] " + nome3 + "\n");
+
+    string sinopse1 = AjustarTexto(filme1.Sinopse);
+    string sinopse2 = AjustarTexto(filme2.Sinopse);
+    string sinopse3 = AjustarTexto(filme3.Sinopse);
+
+    ApresentarComDestaque(sinopse1, ConsoleColor.DarkGray);
+    Console.Write(" | ");
+
+    ApresentarComDestaque(sinopse2, ConsoleColor.DarkGray);
+    Console.Write(" | ");
+
+    ApresentarComDestaque(sinopse3, ConsoleColor.DarkGray);
+    Console.Write("\n");
+}
+    return 0;
   }
 }
 class Aluno
