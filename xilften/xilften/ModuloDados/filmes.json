@@ -1,0 +1,142 @@
+[
+    {
+        "Id": 1,
+        "Titulo": "Inception",
+        "Genero": [
+            "Sci-Fi",
+            "Ação"
+        ],
+        "Autor": {
+            "Id": 1,
+            "Nome": "Christopher Nolan"
+        },
+        "Sinopse": "Um ladrão invade sonhos para roubar segredos.",
+        "Nota": "5"
+    },
+    {
+        "Id": 2,
+        "Titulo": "Pulp Fiction",
+        "Genero": [
+            "Crime",
+            "Drama"
+        ],
+        "Autor": {
+            "Id": 2,
+            "Nome": "Quentin Tarantino"
+        },
+        "Sinopse": "Histórias interligadas do submundo do crime.",
+        "Nota": "4"
+    },
+    {
+        "Id": 3,
+        "Titulo": "Jurassic Park",
+        "Genero": [
+            "Aventura",
+            "Sci-Fi"
+        ],
+        "Autor": {
+            "Id": 3,
+            "Nome": "Steven Spielberg"
+        },
+        "Sinopse": "Dinossauros são trazidos de volta à vida.",
+        "Nota": "5"
+    },
+    {
+        "Id": 4,
+        "Titulo": "The Wolf of Wall Street",
+        "Genero": [
+            "Drama",
+            "Biografia"
+        ],
+        "Autor": {
+            "Id": 4,
+            "Nome": "Martin Scorsese"
+        },
+        "Sinopse": "Ascensão e queda de um corretor ambicioso.",
+        "Nota": "3"
+    },
+    {
+        "Id": 5,
+        "Titulo": "Avatar",
+        "Genero": [
+            "Ação",
+            "Fantasia"
+        ],
+        "Autor": {
+            "Id": 5,
+            "Nome": "James Cameron"
+        },
+        "Sinopse": "Humanos exploram um planeta alienígena.",
+        "Nota": "4"
+    },
+    {
+        "Id": 6,
+        "Titulo": "Gladiator",
+        "Genero": [
+            "Ação",
+            "Drama"
+        ],
+        "Autor": {
+            "Id": 6,
+            "Nome": "Ridley Scott"
+        },
+        "Sinopse": "Um general romano busca vingança.",
+        "Nota": "5"
+    },
+    {
+        "Id": 7,
+        "Titulo": "The Lord of the Rings",
+        "Genero": [
+            "Fantasia",
+            "Aventura"
+        ],
+        "Autor": {
+            "Id": 7,
+            "Nome": "Peter Jackson"
+        },
+        "Sinopse": "Uma jornada para destruir um anel poderoso.",
+        "Nota": "5"
+    },
+    {
+        "Id": 8,
+        "Titulo": "Star Wars",
+        "Genero": [
+            "Sci-Fi",
+            "Aventura"
+        ],
+        "Autor": {
+            "Id": 8,
+            "Nome": "George Lucas"
+        },
+        "Sinopse": "Uma batalha épica entre bem e mal na galáxia.",
+        "Nota": "4"
+    },
+    {
+        "Id": 9,
+        "Titulo": "Dune",
+        "Genero": [
+            "Sci-Fi",
+            "Drama"
+        ],
+        "Autor": {
+            "Id": 9,
+            "Nome": "Denis Villeneuve"
+        },
+        "Sinopse": "Um jovem lidera um povo em um planeta desértico.",
+        "Nota": "4"
+    },
+    {
+        "Id": 10,
+        "Titulo": "Edward Scissorhands",
+        "Genero": [
+            "Fantasia",
+            "Drama"
+        ],
+        "Autor": {
+            "Id": 10,
+            "Nome": "Tim Burton"
+        },
+        "Sinopse": "Um homem com tesouras no lugar das mãos.",
+        "Nota": "3"
+    }
+]

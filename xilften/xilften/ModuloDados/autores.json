@@ -1,0 +1,42 @@
+[
+    {
+        "Id": 1,
+        "Nome": "Christopher Nolan"
+    },
+    {
+        "Id": 2,
+        "Nome": "Quentin Tarantino"
+    },
+    {
+        "Id": 3,
+        "Nome": "Steven Spielberg"
+    },
+    {
+        "Id": 4,
+        "Nome": "Martin Scorsese"
+    },
+    {
+        "Id": 5,
+        "Nome": "James Cameron"
+    },
+    {
+        "Id": 6,
+        "Nome": "Ridley Scott"
+    },
+    {
+        "Id": 7,
+        "Nome": "Peter Jackson"
+    },
+    {
+        "Id": 8,
+        "Nome": "George Lucas"
+    },
+    {
+        "Id": 9,
+        "Nome": "Denis Villeneuve"
+    },
+    {
+        "Id": 10,
+        "Nome": "Tim Burton"
+    }
+]
