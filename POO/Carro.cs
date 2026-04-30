@@ -1,8 +1,9 @@
-class Carro
+class Carro : Veiculos
 {
     public int? id{get; set;}
     public string? cor {get; set;}
     public string? marca {get; set;}
+    // private float velocidade;
     
     // public Carro(Parameters)
     // {
@@ -10,14 +11,15 @@ class Carro
     // }
     void IrParaFrente()
     {
-        
+        System.Console.WriteLine($"Indo para frente a: {velocidade}km/h");
     }
-    void AbrirPorta()
+    public void AumentarVelocidade()
     {
-        Console.Write("Abriu a Porta");
+        velocidade = velocidade + 2 ;
+        IrParaFrente();
     }
-    void Freiar()
+    public float VereficarVelocidade()
     {
-        
+        return velocidade;
     }
 }

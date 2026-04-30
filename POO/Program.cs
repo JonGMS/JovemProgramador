@@ -1,24 +1,45 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Globalization;
-
-Console.WriteLine("Hello, World!");
-
-Livro livro = new Livro();
-livro.Id = 1;
-livro.Nome = "Harry Potter e a Pedra Filosofal";
-livro.Autor = "J. K. Rowling";
-livro.NumeroPaginas = 264;
-
-livro.Genero = new string[1];
-livro.Genero[0] = "Fantasia";
-
-livro.TipoCapa = "Fino";
-
-livro.Abrir();
-livro.Ler();
-livro.MatarAranha();
-string statusLivro = livro.ArrumarCartinha();
-while(statusLivro == "Não Arrumou")
+Carro car = new Carro();
+Motorista motorista = new Motorista();
+Moto moto = new Moto();
+motorista.nome = "João Gabriel";
+while (car.VereficarVelocidade() < 160 || car.VereficarVelocidade() < 160)
 {
-    statusLivro = livro.ArrumarCartinha();
+    try
+    {
+        Console.Write("Moto [1]\nCarro [2]\nQual veiculo você deseja: ");
+        string opcao = Console.ReadLine();
+        if (opcao == "1")
+        {
+            while (moto.VereficarVelocidade() < 160)
+            {
+                motorista.AcelerarMoto(moto);
+            }
+        }
+        else if (opcao == "2")
+        {
+            while (car.VereficarVelocidade() < 160)
+            {
+                motorista.AcelerarCarro(car);
+            }
+        }
+        else
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("\nOpcao inválida, tente novamente.");
+            Console.ResetColor();
+        }
+    }
+    catch (Exception e)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine("\nOpcao inválida, tente novamente.");
+        Console.ResetColor();
+    }
 }
+
+
+
+
+
